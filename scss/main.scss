@@ -27,8 +27,10 @@ h3 {
   }
 
   &.sm-heading {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     padding: 0.2rem 1rem;
+    font-size: 2rem;
+    background: rgba(lighten($primary-color, 2), 0.5);
   }
 }
 

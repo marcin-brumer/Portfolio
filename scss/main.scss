@@ -78,38 +78,33 @@ main {
   display: grid;
   grid-gap: 30px;
   grid-template-areas:
-    "bioimage bio bio"
-    "job1 job2 job3";
-  grid-template-columns: repeat(3, 1fr);
+    "i i i i b b b b b b b b"
+    "s s s s s s s s s s s s";
+  grid-template-columns: repeat(12, 1fr);
 
   .bio-image {
-    grid-area: bioimage;
+    grid-area: i;
     margin: auto;
     border-radius: 50%;
     border: $secondary-color 3px solid;
   }
 
   .bio {
-    grid-area: bio;
+    grid-area: b;
     font-size: 1.5rem;
   }
 
-  .job-1 {
-    grid-area: job1;
-  }
-
-  .job-2 {
-    grid-area: job2;
-  }
-
-  .job-3 {
-    grid-area: job3;
-  }
-
-  .job {
-    background: lighten($primary-color, 5);
-    padding: 0.5rem;
-    border-bottom: $secondary-color 5px solid;
+  .logos {
+    grid-area: s;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .logo {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      margin: 20px;
+    }
   }
 }
 

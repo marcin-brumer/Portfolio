@@ -198,15 +198,49 @@ main {
 
 .projects {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   grid-gap: 0.7rem; }
   .projects img {
     width: 100%;
-    border: 3px #fff solid; }
-    .projects img:hover {
-      opacity: 0.5;
-      border-color: #eece1a;
+    border: 1px solid #444;
+    transition: all 0.5s ease-out; }
+  .projects .card {
+    position: relative; }
+    .projects .card .card-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      opacity: 0;
+      text-align: center;
       transition: all 0.5s ease-out; }
+    .projects .card .link::before,
+    .projects .card .link::after {
+      content: "";
+      position: absolute;
+      top: 1.25em;
+      bottom: 1.5em;
+      right: 1.25em;
+      left: 1.25em;
+      transition: all 0.5s ease-out; }
+    .projects .card .link::before {
+      transform: scale(0, 1);
+      opacity: 1;
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #fff; }
+    .projects .card .link::after {
+      transform: scale(1, 0);
+      border-left: 1px solid #fff;
+      border-right: 1px solid #fff; }
+    .projects .card .link:hover .card-img {
+      opacity: 0.3;
+      border-color: #fff; }
+    .projects .card .link:hover .card-text {
+      opacity: 1; }
+    .projects .card .link:hover::before {
+      transform: scale(1.07, 1); }
+    .projects .card .link:hover::after {
+      transform: scale(1, 1.09); }
 
 .boxes {
   display: flex;
@@ -227,23 +261,20 @@ main {
       .boxes div:hover span {
         color: #000; }
 
-.btn, .btn-dark, .btn-light {
+.btn, .btn-dark {
   display: block;
   padding: 0.5rem 1rem;
   border: 0;
   margin-bottom: 0.3rem;
+  text-align: center;
   transition: all 0.5s ease-out; }
-  .btn:hover, .btn-dark:hover, .btn-light:hover {
+  .btn:hover, .btn-dark:hover {
     background: #eece1a;
     color: #000; }
 
 .btn-dark {
   background: black;
   color: #fff; }
-
-.btn-light {
-  background: #c4c4c4;
-  color: #333; }
 
 #main-footer {
   display: flex;

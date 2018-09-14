@@ -74,6 +74,7 @@ main {
   }
 }
 
+// About Page
 .about-info {
   display: grid;
   grid-gap: 30px;
@@ -111,17 +112,67 @@ main {
 //Work/Projects
 .projects {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   grid-gap: 0.7rem;
 
   img {
     width: 100%;
-    border: 3px #fff solid;
+    border: 1px solid $primary-color;
+    @include easeOut();
+  }
 
-    &:hover {
-      opacity: 0.5;
-      border-color: $secondary-color;
-      @include easeOut;
+  .card {
+    position: relative;
+
+    .card-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      opacity: 0;
+      text-align: center;
+      @include easeOut();
+    }
+
+    .link::before,
+    .link::after {
+      content: "";
+      position: absolute;
+      top: 1.25em;
+      bottom: 1.5em;
+      right: 1.25em;
+      left: 1.25em;
+      @include easeOut();
+    }
+
+    .link::before {
+      transform: scale(0, 1);
+      opacity: 1;
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+    }
+
+    .link::after {
+      transform: scale(1, 0);
+      border-left: 1px solid #fff;
+      border-right: 1px solid #fff;
+    }
+
+    .link:hover .card-img {
+      opacity: 0.3;
+      border-color: #fff;
+    }
+
+    .link:hover .card-text {
+      opacity: 1;
+    }
+
+    .link:hover::before {
+      transform: scale(1.07, 1);
+    }
+
+    .link:hover::after {
+      transform: scale(1, 1.09);
     }
   }
 }
@@ -158,6 +209,7 @@ main {
   padding: 0.5rem 1rem;
   border: 0;
   margin-bottom: 0.3rem;
+  text-align: center;
   @include easeOut;
 
   &:hover {
@@ -170,12 +222,6 @@ main {
   @extend .btn;
   background: darken($primary-color, 50);
   color: #fff;
-}
-
-.btn-light {
-  @extend .btn;
-  background: lighten($primary-color, 50);
-  color: #333;
 }
 
 #main-footer {

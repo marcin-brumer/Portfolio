@@ -204,7 +204,8 @@ main {
     border: 1px solid #444;
     transition: all 0.5s ease-out; }
   .projects .card {
-    position: relative; }
+    position: relative;
+    overflow: hidden; }
     .projects .card .card-text {
       position: absolute;
       top: 50%;
@@ -234,6 +235,7 @@ main {
       border-right: 1px solid #fff; }
     .projects .card .link:hover .card-img {
       opacity: 0.3;
+      transform: scale(1.2);
       border-color: #fff; }
     .projects .card .link:hover .card-text {
       opacity: 1; }

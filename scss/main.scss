@@ -122,7 +122,6 @@ main {
 
   .card {
     position: relative;
-    overflow: hidden;
 
     .card-text {
       position: absolute;
@@ -161,7 +160,6 @@ main {
 
     .link:hover .card-img {
       opacity: 0.3;
-      transform: scale(1.2);
       border-color: #fff;
     }
 

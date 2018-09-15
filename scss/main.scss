@@ -179,25 +179,29 @@ main {
 
 //Contact Page
 .boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 1rem;
+  margin-top: 3rem;
 
-  div {
+  .mail {
     font-size: 2rem;
-    border: 3px #fff solid;
-    padding: 1.5rem 2.5rem;
     margin-bottom: 3rem;
     @include easeOut;
 
-    &:hover {
-      padding: 0.5rem 1.5rem;
-      background: $secondary-color;
-      color: set-text-color($secondary-color);
-      span {
-        color: set-text-color($secondary-color);
+    p {
+      margin-top: 1rem;
+    }
+  }
+
+  .socials {
+    margin-top: 1rem;
+    font-size: 2rem;
+
+    a {
+      padding: 0.4rem;
+      font-size: 1rem;
+
+      &:hover {
+        color: $secondary-color;
+        @include easeOut();
       }
     }
   }

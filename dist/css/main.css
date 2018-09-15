@@ -243,23 +243,22 @@ main {
       transform: scale(1, 1.09); }
 
 .boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 1rem; }
-  .boxes div {
+  margin-top: 3rem; }
+  .boxes .mail {
     font-size: 2rem;
-    border: 3px #fff solid;
-    padding: 1.5rem 2.5rem;
     margin-bottom: 3rem;
     transition: all 0.5s ease-out; }
-    .boxes div:hover {
-      padding: 0.5rem 1.5rem;
-      background: #eece1a;
-      color: #000; }
-      .boxes div:hover span {
-        color: #000; }
+    .boxes .mail p {
+      margin-top: 1rem; }
+  .boxes .socials {
+    margin-top: 1rem;
+    font-size: 2rem; }
+    .boxes .socials a {
+      padding: 0.4rem;
+      font-size: 1rem; }
+      .boxes .socials a:hover {
+        color: #eece1a;
+        transition: all 0.5s ease-out; }
 
 .btn, .btn-dark {
   display: block;
@@ -334,4 +333,6 @@ main {
       margin-top: 1rem;
       font-size: 5rem; }
   .projects {
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  .mail p {
+    font-size: 1.35rem; } }

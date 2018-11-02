@@ -210,48 +210,118 @@ main {
 .projects {
   display: grid;
   grid-gap: 0.7rem; }
-  .projects img {
+  .projects .item {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 10px 1%;
+    max-width: 480px;
+    max-height: 360px;
     width: 100%;
-    border: 1px solid #444;
-    transition: all 0.5s ease-out; }
-  .projects .card {
-    position: relative; }
-    .projects .card .card-text {
+    height: auto;
+    text-align: center;
+    cursor: pointer; }
+    .projects .item img {
+      position: relative;
+      display: block;
+      min-height: 100%;
+      max-width: 100%;
+      opacity: 0.8;
+      border-radius: 15px; }
+    .projects .item figcaption {
+      padding: 2em;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 1.25em;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+      .projects .item figcaption h2,
+      .projects .item figcaption p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+        transition: opacity 0.35s, transform 0.35s;
+        -webkit-transform: translate3d(-50%, -50%, 0);
+        transform: translate3d(-50%, -50%, 0);
+        -webkit-transform-origin: 50%;
+        transform-origin: 50%; }
+      .projects .item figcaption h2 {
+        word-spacing: -0.15em;
+        font-weight: 300;
+        font-size: 158.75%;
+        margin: 0; }
+        .projects .item figcaption h2 span {
+          font-weight: 600; }
+      .projects .item figcaption p {
+        letter-spacing: 1px;
+        font-size: 68.5%;
+        margin: 0;
+        width: 100px;
+        text-transform: none;
+        font-size: 200%;
+        line-height: 2; }
+        .projects .item figcaption p a:first-child i {
+          -webkit-transform: translate3d(-60px, -60px, 0);
+          transform: translate3d(-60px, -60px, 0); }
+        .projects .item figcaption p a:nth-child(2) i {
+          -webkit-transform: translate3d(60px, -60px, 0);
+          transform: translate3d(60px, -60px, 0); }
+        .projects .item figcaption p a i {
+          opacity: 0;
+          -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+          transition: opacity 0.35s, transform 0.35s; }
+        .projects .item figcaption p a:hover,
+        .projects .item figcaption p p a:focus {
+          opacity: 0.6; }
+      .projects .item figcaption > a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        text-indent: 200%;
+        white-space: nowrap;
+        font-size: 0;
+        opacity: 0;
+        color: #fff; }
+    .projects .item figcaption::before,
+    .projects .item figcaption::after {
+      pointer-events: none; }
+    .projects .item figcaption::before {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      opacity: 0;
-      text-align: center;
-      transition: all 0.5s ease-out; }
-    .projects .card .link::before,
-    .projects .card .link::after {
+      width: 148px;
+      height: 148px;
+      border: 2px solid #fff;
       content: "";
-      position: absolute;
-      top: 1.25em;
-      bottom: 1.5em;
-      right: 1.25em;
-      left: 1.25em;
-      transition: all 0.5s ease-out; }
-    .projects .card .link::before {
-      transform: scale(0, 1);
+      opacity: 0;
+      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+      transition: opacity 0.35s, transform 0.35s;
+      -webkit-transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg) scale3d(0, 0, 1);
+      transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg) scale3d(0, 0, 1);
+      -webkit-transform-origin: 50%;
+      transform-origin: 50%; }
+    .projects .item:hover figcaption::before {
       opacity: 1;
-      border-top: 1px solid #fff;
-      border-bottom: 1px solid #fff; }
-    .projects .card .link::after {
-      transform: scale(1, 0);
-      border-left: 1px solid #fff;
-      border-right: 1px solid #fff; }
-    .projects .card .link:hover .card-img {
-      opacity: 0.3;
-      border-color: #fff; }
-    .projects .card .link:hover .card-text {
+      -webkit-transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg) scale3d(1, 1, 1);
+      transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg) scale3d(1, 1, 1); }
+    .projects .item:hover h2 {
+      opacity: 0;
+      -webkit-transform: translate3d(-50%, -50%, 0) scale3d(0.8, 0.8, 1);
+      transform: translate3d(-50%, -50%, 0) scale3d(0.8, 0.8, 1); }
+    .projects .item:hover p i:empty {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      /* just because it's stronger than nth-child */
       opacity: 1; }
-    .projects .card .link:hover::before {
-      transform: scale(1.07, 1); }
-    .projects .card .link:hover::after {
-      transform: scale(1, 1.09); }
 
 .boxes {
   margin-top: 3rem; }

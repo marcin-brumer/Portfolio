@@ -31,7 +31,6 @@ h3 {
     padding: 0.2rem 1rem;
     font-size: 2rem;
     background: rgba(lighten($primary-color, 2), 0.5);
-    height: 3.4rem;
   }
 }
 
@@ -138,6 +137,9 @@ main {
 }
 
 // About Page
+#about {
+  background: url(/dist/img/background2.png) center center repeat;
+}
 .about-info {
   display: grid;
   grid-gap: 30px;
@@ -173,6 +175,9 @@ main {
 }
 
 //Work/Projects
+#work {
+  background: url(/dist/img/background2.png) center center repeat;
+}
 .projects {
   display: grid;
   grid-gap: 0.7rem;
@@ -195,7 +200,7 @@ main {
       display: block;
       min-height: 100%;
       max-width: 100%;
-      opacity: 0.8;
+      opacity: 0.9;
       border-radius: 15px;
     }
 
@@ -336,6 +341,9 @@ main {
   }
 }
 // Contact Page
+#contact {
+  background: url(/dist/img/background2.png) center center repeat;
+}
 .boxes {
   margin-top: 3rem;
   .mail {

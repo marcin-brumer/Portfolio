@@ -86,10 +86,6 @@
     }
   }
 
-  .about-info {
-    padding-top: 3rem;
-  }
-
   .projects {
     grid-template-columns: 1fr;
   }
@@ -107,8 +103,6 @@
 
 @include mediaXs {
   .projects {
-    padding-top: 4rem;
-
     .item figcaption::before {
       width: 120px;
       height: 120px;

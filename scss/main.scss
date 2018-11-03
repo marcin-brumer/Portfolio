@@ -56,14 +56,61 @@ main {
 
   .icons {
     margin-top: 1rem;
+    .btn {
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      background: rgba(lighten($primary-color, 2), 0.5);
+      margin-right: 20px;
+      border-radius: 30%;
+      box-shadow: 0 5px 15px -5px #00000070;
+      color: $secondary-color;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
 
-    a {
-      padding: 0.4rem;
-
-      &:hover {
-        color: $secondary-color;
-        @include easeOut();
+      i {
+        line-height: 60px;
+        transition: 0.2s linear;
+        color: #fff;
       }
+
+      &:hover i {
+        transform: scale(1.2);
+        color: $primary-color;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 120%;
+        height: 120%;
+        background: $secondary-color;
+        transform: rotate(45deg);
+        left: -110%;
+        top: 90%;
+      }
+
+      &:hover::before {
+        animation: anim 0.7s 1;
+        top: -10%;
+        left: -10%;
+      }
+    }
+  }
+
+  @keyframes anim {
+    0% {
+      left: -110%;
+      top: 90%;
+    }
+    50% {
+      left: 10%;
+      top: -30%;
+    }
+    100% {
+      top: -10%;
+      left: -10%;
     }
   }
 
@@ -311,24 +358,6 @@ main {
       }
     }
   }
-}
-// Button Styles
-.btn {
-  display: block;
-  padding: 0.5rem 1rem;
-  border: 0;
-  margin-bottom: 0.3rem;
-  text-align: center;
-  @include easeOut;
-  &:hover {
-    background: $secondary-color;
-    color: set-text-color($secondary-color);
-  }
-}
-.btn-dark {
-  @extend .btn;
-  background: darken($primary-color, 50);
-  color: #fff;
 }
 #main-footer {
   display: flex;

@@ -163,11 +163,49 @@ main {
   min-height: calc(100vh - 50px); }
   main .icons {
     margin-top: 1rem; }
-    main .icons a {
-      padding: 0.4rem; }
-      main .icons a:hover {
-        color: #eece1a;
-        transition: all 0.5s ease-out; }
+    main .icons .btn {
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      background: rgba(73, 73, 73, 0.5);
+      margin-right: 20px;
+      border-radius: 30%;
+      box-shadow: 0 5px 15px -5px #00000070;
+      color: #eece1a;
+      overflow: hidden;
+      position: relative;
+      text-align: center; }
+      main .icons .btn i {
+        line-height: 60px;
+        transition: 0.2s linear;
+        color: #fff; }
+      main .icons .btn:hover i {
+        transform: scale(1.2);
+        color: #444; }
+      main .icons .btn::before {
+        content: "";
+        position: absolute;
+        width: 120%;
+        height: 120%;
+        background: #eece1a;
+        transform: rotate(45deg);
+        left: -110%;
+        top: 90%; }
+      main .icons .btn:hover::before {
+        animation: anim 0.7s 1;
+        top: -10%;
+        left: -10%; }
+
+@keyframes anim {
+  0% {
+    left: -110%;
+    top: 90%; }
+  50% {
+    left: 10%;
+    top: -30%; }
+  100% {
+    top: -10%;
+    left: -10%; } }
   main#home {
     overflow: hidden; }
     main#home h1 {
@@ -342,21 +380,6 @@ main {
         color: #eece1a;
         transition: all 0.5s ease-out; }
 
-.btn, .btn-dark {
-  display: block;
-  padding: 0.5rem 1rem;
-  border: 0;
-  margin-bottom: 0.3rem;
-  text-align: center;
-  transition: all 0.5s ease-out; }
-  .btn:hover, .btn-dark:hover {
-    background: #eece1a;
-    color: #000; }
-
-.btn-dark {
-  background: black;
-  color: #fff; }
-
 #main-footer {
   display: flex;
   align-items: center;
@@ -418,6 +441,8 @@ main {
     main .lg-heading {
       margin-top: 1rem;
       font-size: 5rem; }
+    main .icons .btn {
+      margin: 0 10px; }
   .projects {
     grid-template-columns: 1fr; }
   #work {

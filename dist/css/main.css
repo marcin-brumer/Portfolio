@@ -443,6 +443,8 @@ main {
       font-size: 5rem; }
     main .icons .btn {
       margin: 0 10px; }
+  .about-info {
+    padding-top: 3rem; }
   .projects {
     grid-template-columns: 1fr; }
   #work {

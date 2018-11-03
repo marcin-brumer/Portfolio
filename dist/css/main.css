@@ -209,7 +209,8 @@ main {
 
 .projects {
   display: grid;
-  grid-gap: 0.7rem; }
+  grid-gap: 0.7rem;
+  padding-top: 2rem; }
   .projects .item {
     position: relative;
     float: left;
@@ -365,13 +366,17 @@ main {
   color: #fff;
   height: 50px; }
 
-@media screen and (min-width: 1171px) {
+@media screen and (min-width: 1501px) {
   .projects {
     grid-template-columns: repeat(4, 1fr); } }
 
-@media screen and (min-width: 769px) and (max-width: 1170px) {
+@media screen and (min-width: 1201px) and (max-width: 1500px) {
   .projects {
     grid-template-columns: repeat(3, 1fr); } }
+
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 768px) {
   main {
@@ -399,11 +404,11 @@ main {
       background: url("../img/portrait_small.jpg");
       width: 150px;
       height: 150px; }
+  .projects {
+    justify-items: center; }
   .about-info {
     grid-template-areas: "i" "b" "s";
-    grid-template-columns: 1fr; }
-  .projects {
-    grid-template-columns: repeat(2, 1fr); } }
+    grid-template-columns: 1fr; } }
 
 @media screen and (max-width: 500px) {
   main {
@@ -415,5 +420,14 @@ main {
       font-size: 5rem; }
   .projects {
     grid-template-columns: 1fr; }
+  #work {
+    padding: 1rem; }
   .mail p {
     font-size: 1.35rem; } }
+
+@media screen and (max-width: 350px) {
+  .projects {
+    padding-top: 4rem; }
+    .projects .item figcaption::before {
+      width: 120px;
+      height: 120px; } }

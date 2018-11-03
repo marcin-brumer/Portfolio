@@ -1,18 +1,21 @@
-// Widescreens
 @include mediaXL {
   .projects {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-// Desktop & Laptop
 @include mediaLg {
   .projects {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-// Tablets
+@include mediaMdWork {
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @include mediaMd {
   main {
     align-items: center;
@@ -52,6 +55,10 @@
     }
   }
 
+  .projects {
+    justify-items: center;
+  }
+
   .about-info {
     grid-template-areas:
       "i"
@@ -59,13 +66,8 @@
       "s";
     grid-template-columns: 1fr;
   }
-
-  .projects {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
-// Smartphones
 @include mediaSm {
   main {
     padding: 2rem;
@@ -83,9 +85,24 @@
     grid-template-columns: 1fr;
   }
 
+  #work {
+    padding: 1rem;
+  }
+
   .mail {
     p {
       font-size: 1.35rem;
+    }
+  }
+}
+
+@include mediaXs {
+  .projects {
+    padding-top: 4rem;
+
+    .item figcaption::before {
+      width: 120px;
+      height: 120px;
     }
   }
 }

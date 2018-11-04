@@ -221,7 +221,7 @@ main {
     border-right-color: transparent; } }
 
 #about {
-  background: url(/dist/img/background2.png) center center repeat; }
+  background: url(../img/background2.png) center center repeat; }
 
 .about-info {
   display: grid;
@@ -248,7 +248,7 @@ main {
       margin: 20px; }
 
 #work {
-  background: url(/dist/img/background2.png) center center repeat; }
+  background: url(../img/background2.png) center center repeat; }
 
 .projects {
   display: grid;
@@ -368,7 +368,7 @@ main {
       opacity: 1; }
 
 #contact {
-  background: url(/dist/img/background2.png) center center repeat; }
+  background: url(../img/background2.png) center center repeat; }
 
 .boxes {
   margin-top: 3rem; }

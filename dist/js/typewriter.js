@@ -1,5 +1,10 @@
+"use strict";
+
 // Typewriting Effect
-function TypeWriter(txtElement, words, wait = 3000) {
+function TypeWriter(txtElement, words) {
+  var wait =
+    arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 3000;
+
   this.txtElement = txtElement;
   this.words = words;
   this.txt = "";
@@ -11,9 +16,9 @@ function TypeWriter(txtElement, words, wait = 3000) {
 
 TypeWriter.prototype.type = function() {
   // Current index of word
-  const current = this.wordIndex % this.words.length;
+  var current = this.wordIndex % this.words.length;
   // Get full text of current word
-  const fullTxt = this.words[current];
+  var fullTxt = this.words[current];
 
   // Chech if deleting
   if (this.isDeleteing) {
@@ -28,7 +33,7 @@ TypeWriter.prototype.type = function() {
   this.txtElement.innerHTML = '<span class="txt">' + this.txt + "</span>";
 
   // Type speed
-  let typeSpeed = 200;
+  var typeSpeed = 200;
 
   if (this.isDeleteing) {
     typeSpeed /= 2;
@@ -48,7 +53,7 @@ TypeWriter.prototype.type = function() {
     typeSpeed = 500;
   }
 
-  const that = this;
+  var that = this;
   setTimeout(function() {
     that.type();
   }, typeSpeed);
@@ -58,9 +63,9 @@ TypeWriter.prototype.type = function() {
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
-  const txtElement = document.querySelector(".txt-type");
-  const words = JSON.parse(txtElement.getAttribute("data-words"));
-  const wait = txtElement.getAttribute("data-wait");
+  var txtElement = document.querySelector(".txt-type");
+  var words = JSON.parse(txtElement.getAttribute("data-words"));
+  var wait = txtElement.getAttribute("data-wait");
 
   //Initialize TypeWriter
   new TypeWriter(txtElement, words, wait);

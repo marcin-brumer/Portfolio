@@ -80,3 +80,9 @@ $background-opacity: 0.8;
     @content;
   }
 }
+
+@mixin mediaLandscapeSm {
+  @media screen and (max-height: 320px) {
+    @content;
+  }
+}

@@ -159,7 +159,7 @@ header {
 
 main {
   padding: 4rem;
-  min-height: 100vh; }
+  min-height: calc(100vh - 50px); }
   main .icons {
     margin-top: 1rem; }
     main .icons .btn {
@@ -206,6 +206,7 @@ main {
     top: -10%;
     left: -10%; } }
   main#home {
+    height: 100vh;
     overflow: hidden; }
     main#home h1 {
       margin-top: 20vh; }
@@ -369,24 +370,63 @@ main {
 
 #contact {
   background: url(../img/background2.png) center center repeat; }
-
-.boxes {
-  margin-top: 3rem; }
-  .boxes .mail {
-    font-size: 2rem;
-    margin-bottom: 3rem;
-    transition: all 0.5s ease-out; }
-    .boxes .mail p {
-      margin-top: 1rem; }
-  .boxes .socials {
-    margin-top: 1rem;
-    font-size: 2rem; }
-    .boxes .socials a {
-      padding: 0.4rem;
-      font-size: 1rem; }
-      .boxes .socials a:hover {
-        color: #eece1a;
-        transition: all 0.5s ease-out; }
+  #contact form {
+    padding-top: 20px;
+    width: 600px; }
+    #contact form input,
+    #contact form textarea {
+      background-color: #444;
+      background-size: 30px 30px;
+      background-position: 11px 8px;
+      background-repeat: no-repeat;
+      color: #fff;
+      display: block;
+      width: 100%;
+      line-height: 22px;
+      font-size: 16px;
+      padding: 13px 13px 13px 54px;
+      margin: 15px 0;
+      outline-color: #eece1a;
+      border: none; }
+    #contact form #name {
+      background-image: url(../img/svg/person.svg); }
+    #contact form #email {
+      background-image: url(../img/svg/envelope.svg); }
+    #contact form #message {
+      background-image: url(../img/svg/pen.svg); }
+    #contact form button {
+      display: block;
+      width: 120px;
+      padding: 10px;
+      cursor: pointer;
+      background-color: #c6ab0f;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      border-radius: 7px;
+      border: none;
+      transition: all 0.3s ease-out;
+      position: relative;
+      overflow: hidden; }
+      #contact form button:before {
+        content: ">>";
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: -30px;
+        width: 30px;
+        height: 100%;
+        transition: all 0.2s linear 0s;
+        text-align: center; }
+      #contact form button:hover {
+        text-indent: -30px; }
+        #contact form button:hover:before {
+          right: 5px;
+          text-indent: 0px; }
 
 #main-footer {
   display: flex;
@@ -439,7 +479,14 @@ main {
     justify-items: center; }
   .about-info {
     grid-template-areas: "i" "b" "s";
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  #contact form {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto; }
+    #contact form button {
+      margin-left: auto;
+      margin-right: auto; } }
 
 @media screen and (max-width: 500px) {
   main {

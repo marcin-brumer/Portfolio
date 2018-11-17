@@ -1,81 +1,76 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="css/main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/main.css" />
     <title>Contact Me</title>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <header>
-        <div class="menu-btn">
-            <div class="btn-line"></div>
-            <div class="btn-line"></div>
-            <div class="btn-line"></div>
-        </div>
+      <div class="menu-btn">
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+      </div>
 
-        <nav class="menu">
-            <div class="menu-branding">
-                <div class="portrait"></div>
-            </div>
-            <ul class="menu-nav">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">About Me</a>
-                </li>
-                <li class="nav-item">
-                    <a href="work.html" class="nav-link">My Work</a>
-                </li>
-                <li class="nav-item current">
-                    <a href="contact.html" class="nav-link">How To Reach Me</a>
-                </li>
-            </ul>
-        </nav>
+      <nav class="menu">
+        <div class="menu-branding"><div class="portrait"></div></div>
+        <ul class="menu-nav">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a href="work.html" class="nav-link">My Work</a>
+          </li>
+          <li class="nav-item current">
+            <a href="contact.html" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <main id="contact">
-        <h1 class="lg-heading">
-            Contact
-            <span class="text-secondary">Me</span>
-        </h1>
-        <h2 class="sm-heading">
-            This is how you can reach me...
-        </h2>
-        <div class="boxes">
-            <div class="mail">
-                <span class="text-secondary">Email:</span>
-                <p>marcin.brumer@gmail.com</p>
-            </div>
-            <div class="socials">
-                <span class="text-secondary">Lets get social:</span>
-                <div class="icons">
-                    <a href="#">
-                        <i class="fab fa-linkedin fa-2x"></i>
-                    </a>
-                    <a href="https://github.com/marcin-brumer" target="_blank">
-                        <i class="fab fa-github fa-2x"></i>
-                    </a>
-                    <a href="https://codepen.io/Brumek/" target="_blank">
-                        <i class="fab fa-codepen fa-2x"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-
+      <h1 class="lg-heading">Contact <span class="text-secondary">Me</span></h1>
+      <h2 class="sm-heading">Let's have a chat...</h2>
+      <form name="contact" netlify>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Your name..."
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Email..."
+          required
+        />
+        <textarea
+          name="message"
+          rows="8"
+          id="message"
+          placeholder="Message..."
+          required
+        ></textarea>
+        <button type="submit">SEND</button>
+      </form>
     </main>
 
-    <footer id="main-footer">
-        Copyright &copy; 2018
-    </footer>
+    <footer id="main-footer">Copyright &copy; 2018</footer>
     <script src="js/main.js"></script>
-</body>
-
+  </body>
 </html>

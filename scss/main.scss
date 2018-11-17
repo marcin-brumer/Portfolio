@@ -51,7 +51,7 @@ header {
 
 main {
   padding: 4rem;
-  min-height: 100vh;
+  min-height: calc(100vh - 50px);
 
   .icons {
     margin-top: 1rem;
@@ -114,6 +114,7 @@ main {
   }
 
   &#home {
+    height: 100vh;
     overflow: hidden;
     h1 {
       margin-top: 20vh;
@@ -343,26 +344,69 @@ main {
 // Contact Page
 #contact {
   background: url(../img/background2.png) center center repeat;
-}
-.boxes {
-  margin-top: 3rem;
-  .mail {
-    font-size: 2rem;
-    margin-bottom: 3rem;
-    @include easeOut;
-    p {
-      margin-top: 1rem;
+  form {
+    padding-top: 20px;
+    width: 600px;
+    input,
+    textarea {
+      background-color: $primary-color;
+      background-size: 30px 30px;
+      background-position: 11px 8px;
+      background-repeat: no-repeat;
+      color: #fff;
+      display: block;
+      width: 100%;
+      line-height: 22px;
+      font-size: 16px;
+      padding: 13px 13px 13px 54px;
+      margin: 15px 0;
+      outline-color: $secondary-color;
+      border: none;
     }
-  }
-  .socials {
-    margin-top: 1rem;
-    font-size: 2rem;
-    a {
-      padding: 0.4rem;
-      font-size: 1rem;
+    #name {
+      background-image: url(../img/svg/person.svg);
+    }
+    #email {
+      background-image: url(../img/svg/envelope.svg);
+    }
+    #message {
+      background-image: url(../img/svg/pen.svg);
+    }
+    button {
+      display: block;
+      width: 120px;
+      padding: 10px;
+      cursor: pointer;
+      background-color: darken($secondary-color, 10);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      border-radius: 7px;
+      border: none;
+      transition: all 0.3s ease-out;
+      position: relative;
+      overflow: hidden;
+      &:before {
+        content: ">>";
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: -30px;
+        width: 30px;
+        height: 100%;
+        transition: all 0.2s linear 0s;
+        text-align: center;
+      }
       &:hover {
-        color: $secondary-color;
-        @include easeOut();
+        text-indent: -30px;
+        &:before {
+          right: 5px;
+          text-indent: 0px;
+        }
       }
     }
   }

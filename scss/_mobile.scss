@@ -66,6 +66,18 @@
       "s";
     grid-template-columns: 1fr;
   }
+
+  #contact {
+    form {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      button {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
 }
 
 @include mediaSm {

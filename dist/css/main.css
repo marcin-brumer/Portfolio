@@ -206,7 +206,7 @@ main {
     top: -10%;
     left: -10%; } }
   main#home {
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden; }
     main#home h1 {
       margin-top: 20vh; }

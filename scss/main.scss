@@ -2,6 +2,7 @@
 @import "menu";
 
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -62,6 +63,7 @@ main {
       background: rgba(lighten($primary-color, 2), 0.5);
       margin-right: 20px;
       border-radius: 30%;
+      -webkit-box-shadow: 0 5px 15px -5px #00000070;
       box-shadow: 0 5px 15px -5px #00000070;
       color: $secondary-color;
       overflow: hidden;
@@ -70,11 +72,15 @@ main {
 
       i {
         line-height: 60px;
+        -webkit-transition: 0.2s linear;
+        -o-transition: 0.2s linear;
         transition: 0.2s linear;
         color: #fff;
       }
 
       &:hover i {
+        -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
         transform: scale(1.2);
         color: $primary-color;
       }
@@ -85,16 +91,34 @@ main {
         width: 120%;
         height: 120%;
         background: $secondary-color;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
         transform: rotate(45deg);
         left: -110%;
         top: 90%;
       }
 
       &:hover::before {
+        -webkit-animation: anim 0.7s 1;
         animation: anim 0.7s 1;
         top: -10%;
         left: -10%;
       }
+    }
+  }
+
+  @-webkit-keyframes anim {
+    0% {
+      left: -110%;
+      top: 90%;
+    }
+    50% {
+      left: 10%;
+      top: -30%;
+    }
+    100% {
+      top: -10%;
+      left: -10%;
     }
   }
 
@@ -125,7 +149,17 @@ main {
 // Cursor for TypeWriter
 .txt {
   border-right: 0.2rem solid #777;
+  -webkit-animation: blinkTextCursor 500ms steps(44) infinite normal;
   animation: blinkTextCursor 500ms steps(44) infinite normal;
+}
+
+@-webkit-keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
 }
 
 @keyframes blinkTextCursor {
@@ -142,14 +176,21 @@ main {
   background: url(../img/background2.png) center center repeat;
 }
 .about-info {
+  display: -ms-grid;
   display: grid;
   grid-gap: 30px;
+  -ms-grid-rows: auto 30px auto;
   grid-template-areas:
     "i i i i b b b b b b b b"
     "s s s s s s s s s s s s";
+  -ms-grid-columns: 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr
+    30px 1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr;
   grid-template-columns: repeat(12, 1fr);
 
   .bio-image {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 7;
     grid-area: i;
     margin: auto;
     border-radius: 50%;
@@ -157,14 +198,25 @@ main {
   }
 
   .bio {
+    -ms-grid-row: 1;
+    -ms-grid-column: 9;
+    -ms-grid-column-span: 15;
     grid-area: b;
     font-size: 1.5rem;
   }
 
   .logos {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 23;
     grid-area: s;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     .logo {
       text-align: center;
@@ -180,10 +232,10 @@ main {
   background: url(../img/background2.png) center center repeat;
 }
 .projects {
+  display: -ms-grid;
   display: grid;
   grid-gap: 0.7rem;
   padding-top: 2rem;
-
   .item {
     position: relative;
     float: left;
@@ -224,10 +276,14 @@ main {
         top: 50%;
         left: 50%;
         -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+        transition: opacity 0.35s, -webkit-transform 0.35s;
+        -o-transition: opacity 0.35s, transform 0.35s;
         transition: opacity 0.35s, transform 0.35s;
+        transition: opacity 0.35s, transform 0.35s, -webkit-transform 0.35s;
         -webkit-transform: translate3d(-50%, -50%, 0);
         transform: translate3d(-50%, -50%, 0);
         -webkit-transform-origin: 50%;
+        -ms-transform-origin: 50%;
         transform-origin: 50%;
       }
 
@@ -265,7 +321,10 @@ main {
           i {
             opacity: 0;
             -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+            transition: opacity 0.35s, -webkit-transform 0.35s;
+            -o-transition: opacity 0.35s, transform 0.35s;
             transition: opacity 0.35s, transform 0.35s;
+            transition: opacity 0.35s, transform 0.35s, -webkit-transform 0.35s;
           }
         }
 
@@ -305,12 +364,16 @@ main {
       content: "";
       opacity: 0;
       -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+      transition: opacity 0.35s, -webkit-transform 0.35s;
+      -o-transition: opacity 0.35s, transform 0.35s;
       transition: opacity 0.35s, transform 0.35s;
+      transition: opacity 0.35s, transform 0.35s, -webkit-transform 0.35s;
       -webkit-transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg)
         scale3d(0, 0, 1);
       transform: translate3d(-50%, -50%, 0) rotate3d(0, 0, 1, -45deg)
         scale3d(0, 0, 1);
       -webkit-transform-origin: 50%;
+      -ms-transform-origin: 50%;
       transform-origin: 50%;
     }
 
@@ -384,20 +447,30 @@ main {
       letter-spacing: 2px;
       border-radius: 7px;
       border: none;
+      -webkit-transition: all 0.3s ease-out;
+      -o-transition: all 0.3s ease-out;
       transition: all 0.3s ease-out;
       position: relative;
       overflow: hidden;
       &:before {
         content: ">>";
         font-size: 16px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
         position: absolute;
         top: 0;
         right: -30px;
         width: 30px;
         height: 100%;
+        -webkit-transition: all 0.2s linear 0s;
+        -o-transition: all 0.2s linear 0s;
         transition: all 0.2s linear 0s;
         text-align: center;
       }

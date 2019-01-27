@@ -205,7 +205,7 @@ header {
   color: #eece1a; }
 
 main {
-  padding: 4rem;
+  padding: 3rem;
   min-height: calc(100vh - 50px); }
   main .icons {
     margin-top: 1rem; }
@@ -318,7 +318,8 @@ main {
     -ms-grid-column: 9;
     -ms-grid-column-span: 15;
     grid-area: b;
-    font-size: 1.5rem; }
+    font-size: 1.5rem;
+    text-align: justify; }
   .about-info .logos {
     -ms-grid-row: 3;
     -ms-grid-column: 1;

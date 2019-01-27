@@ -365,7 +365,6 @@ main {
     .projects .item figcaption {
       padding: 2em;
       color: #fff;
-      text-transform: uppercase;
       font-size: 1.25em;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
